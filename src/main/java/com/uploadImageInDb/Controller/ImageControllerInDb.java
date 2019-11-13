@@ -20,6 +20,7 @@ import com.uploadImageInDb.services.ImageServices;
 
 /**
  * Servlet implementation class ImageUploadController
+ *
  */
 @MultipartConfig(maxFileSize = 1024 * 1024 * 1, // 1 MB
 		maxRequestSize = 1024 * 1024 * 10 // 10 MB
