@@ -26,4 +26,4 @@ The main functionality of this project is to let the users save their images in 
 !login-screen](https://raw.githubusercontent.com/piyushrulesyou/Image-Uploader/master/Screenshots/img_upload%20(4).png)
 
 **Editing Image**
-!login-screen](https://raw.githubusercontent.com/piyushrulesyou/Image-Uploader/master/Screenshots/img_upload%20(1).png)
+!login-screen](https://raw.githubusercontent.com/piyushrulesyou/Image-Uploader/master/Screenshots/img_upload%20(2).png)
