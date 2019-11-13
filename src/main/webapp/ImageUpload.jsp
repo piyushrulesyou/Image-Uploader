@@ -1,3 +1,4 @@
+
 <%@ page import=" com.uploadImageInDb.Model.LoginBean"%>
 <%@ page import=" com.uploadImageInDb.Model.ImageBean"%>
 <%@ page import=" java.util.List"%>
@@ -15,6 +16,8 @@
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,19 +26,18 @@
 		document.getElementById("imageForm").reset();
 	}
 </script>
-<style>
-table, th, td {
-	border: 3px solid black;
-	border-collapse: collapse;
-	padding: 15px;
-	text-align: center;
-}
 
-table {
-	border-spacing: 15px;
-	border-collapse: collapse;
-}
-</style>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
 <meta charset="ISO-8859-1">
 <title>Upload Image</title>
 </head>
@@ -53,10 +55,12 @@ table {
 	<form action="ImageControllerInDb" method="post"
 		enctype="multipart/form-data" id="imageForm">
 		<fieldset>
-			<center>IMAGE MANAGEMENT UTILITY</center>
+			<blockquote class="blockquote text-center">
+				<p class="mb-0 display-4">IMAGE MANAGEMENT UTILITY</p>
+			</blockquote>
 			<hr>
 
-			<p">${successMessage}</p>
+			<p>${successMessage}</p>
 
 			<p align="right">
 
@@ -77,8 +81,7 @@ table {
 				type="file" id="image" name="image" accept="image/*" multiple
 				required> <br> <br> <br>
 
-			<p style="color: red"><%=(request.getAttribute("errorSizeExceeding") == null)
-						? ""
+			<p style="color: red"><%=(request.getAttribute("errorSizeExceeding") == null) ? ""
 						: request.getAttribute("errorSizeExceeding")%></p>
 
 
@@ -94,20 +97,21 @@ table {
 
 		List<ImageBean> imageListTemp = imageListTemp1.getImages();
 
-		out.println("Total image(s) uploaded = " + imageListTemp.size());
+		out.println("<strong>Total image(s) uploaded = " + imageListTemp.size() + "</strong>");
 
 		if (imageListTemp.size() != 0) {
 	%>
 	<fieldset>
-		<table style="width: 100%">
-
-			<tr>
-				<th>S.No</th>
-				<th>Name</th>
-				<th>Size</th>
-				<th>Preview</th>
-				<th>Action</th>
-			</tr>
+		<table class="table table-bordered table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th>S.No</th>
+					<th>Name</th>
+					<th>Size</th>
+					<th>Preview</th>
+					<th>Action</th>
+				</tr>
+			</thead>
 			<%
 				if (session.getAttribute("dbUser") != null) {
 
